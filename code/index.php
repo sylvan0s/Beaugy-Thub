@@ -1,33 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
-        <title>Beaugy'Thub</title>
         <meta charset="utf-8" />
+        <title>Beaugy'Thub</title>
+        <link href="dist/css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="dist/css/bootstrap.min.css" rel="stylesheet"> <!-- lien css Bootstrap -->
-        <style>
-            /* CSS du formulaire */
-            body {
-                padding-top: 40px;
-                padding-bottom: 40px;
-                background-color: #eee;       
-            }
-           .form-control {
-                display: block;
-                width: 100%;
-            }
-            .container {
-                width: 1170px;
-            }
-            
-            .form-signin {
-                max-width: 330px;
-                padding: 15px;
-                margin: 0 auto;
-            }
-            h2, .h2 {
-                font-size: 30px;
-            }
-        </style>
+        <link href="dist/css/style.css" rel="stylesheet">
     </head>
     <body>
         <div class="container">
