@@ -3,7 +3,7 @@
     <head>
         <title>Beaugy'Thub</title>
         <meta charset="utf-8" />
-        <link href="dist/css/bootstrap.min.css" rel="stylesheet"> /* lien css Bootstrap */
+        <link href="dist/css/bootstrap.min.css" rel="stylesheet"> <!-- lien css Bootstrap -->
         <style>
         
         /* CSS du formulaire */
