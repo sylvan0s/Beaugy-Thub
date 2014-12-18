@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ceci est une page de test avec des balises PHP</title>
+        <title>Beaugy'Thub</title>
         <meta charset="utf-8" />
         <link href="dist/css/bootstrap.min.css" rel="stylesheet">
         <style>
