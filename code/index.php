@@ -45,7 +45,7 @@
             else {
             ?> 
                 <!--  Formulaire qui disparait quand on entre une url -->
-                <form class="form-signin" role="form" action="test.php" method="POST">
+                <form class="form-signin" role="form" action="index.php" method="POST">
                     <h2 class="form-signin-heading">Beaugy'Thub</h2>
                     <div class="form-group"> 
                         <input class="form-control" type="text" name="url" placeholder="Entrez l'url Github">
