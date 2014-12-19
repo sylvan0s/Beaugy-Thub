@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['url']) && isset($_POST['choix']))
+if (isset(htmlspecialchars($_POST['url'])) && isset($_POST['choix']))
 {
     echo "<!DOCTYPE html>";
     echo "<html lang=\"fr\">";
@@ -48,7 +48,7 @@ if (isset($_POST['url']) && isset($_POST['choix']))
     echo "<body>";
         include("header.php");
         echo "<div class=\"container\">";
-            $page = file_get_contents( $_POST['url'] );    /* Code PHP servant à récupérer toute la page github */
+            $page = file_get_contents(htmlspecialchars($_POST['url']));    /* Code PHP servant à récupérer toute la page github */
             $premier = '<div id="readme" ';                /* On définit la variable où commence la partie de la page que l'on veut (on veut seulement le readme)*/
             $dernier = '<div class="site-footer"';         /* On définit la variable où finit la partie de la page que l'on veut (ce code apparait après la partie readme)*/
             $debutLien = strpos($page, $premier);            /* Donne la position de la variable de début*/
