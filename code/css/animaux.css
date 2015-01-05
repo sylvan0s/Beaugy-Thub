@@ -1,1 +1,93 @@
-plop
+html {
+    background-color: rgb(244, 237, 211);
+}
+
+body {
+    width: 80%;
+    margin: 1% auto 5px auto !important;
+    overflow-x: hidden;
+    height: auto;
+    background: url("../images/bann_animaux.png") no-repeat scroll 50% 0% / 100% auto #E6E5E1 !important;
+    border: 3px solid #3b2939;
+}
+
+header nav {
+    position: absolute;
+    padding: 20px 0px 2px 0px;
+    top: -20px;
+    width: 93%;
+    text-align: center;
+    left: 3.5%;
+    border: 1px solid #000000;
+    border-radius: 16px;
+    background-color: rgb(230, 229, 225);
+    box-shadow: 0px 0px 5px #000000;
+    border-left-style: dotted;
+    border-right-style: dotted;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 3px 50px;
+}
+
+header nav ul li a {
+    color: #000000 !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: none !important;
+}
+
+header + div.container {
+    margin-top: 47%;
+    width: 100%;
+    overflow-x: auto;
+}
+
+div.container {
+    width: 100%;
+}
+
+div.container div {
+    min-width: auto !important;
+}
+
+div.header a {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+h1 {
+    color: #ffffff;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 4px #000, 0px 0px 5px #000000;
+}
+
+img {
+    border: 4px dotted #e6e1c4;
+}
+
+h3 {
+    color: #bfbdbb !important;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px;
+    font-size: 20px;
+}
+
+h2 {
+    color: #dac79c !important;
+    text-transform: uppercase;
+    text-shadow: 0px 0px 3px;
+    font-size: 20px;
+}
+
+a[class="button primary"], a[class="button"] {
+    color: #000000 !important;
+    text-shadow: none !important;
+}
+
+a, a:hover {
+    text-decoration: none !important;
+    color: #928e82 !important;
+    text-shadow: 1px 1px 0px #ffffff;
+}
