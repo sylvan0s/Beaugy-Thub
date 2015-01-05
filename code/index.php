@@ -1,7 +1,16 @@
 <?php
+/* VARIABLES */
 $url = htmlspecialchars($_POST['url']);
 $choix = $_POST['choix'];
 
+$page = file_get_contents($url);                                // Code PHP servant à récupérer toute la page github
+$premier = "<article class=\"markdown-body entry-content\"";    // On définit la variable où commence la partie de la page que l'on veut (on veut seulement le readme)
+$dernier = "<div class=\"site-footer\"";                        // On définit la variable où finit la partie de la page que l'on veut (ce code apparait après la partie readme)
+$debutLien = strpos($page, $premier);                           // Donne la position de la variable de début
+$finLien = strpos($page, $dernier);                             // Donne la position de la variable de fin
+$content = substr($page, $debutLien, $finLien - $debutLien);    // Fonction filtrante
+
+/* CODE */
 if (isset($url) && isset($choix))
 {
     echo "<!DOCTYPE html>";
@@ -51,14 +60,8 @@ if (isset($url) && isset($choix))
     echo "<body>";
         include("header.php");
         echo "<div class=\"container\">";
-            $page = file_get_contents($url);    /* Code PHP servant à récupérer toute la page github */
-            $premier = '<div id="readme" ';                /* On définit la variable où commence la partie de la page que l'on veut (on veut seulement le readme)*/
-            $dernier = '<div class="site-footer"';         /* On définit la variable où finit la partie de la page que l'on veut (ce code apparait après la partie readme)*/
-            $debutLien = strpos($page, $premier);            /* Donne la position de la variable de début*/
-            $finLien = strpos($page, $dernier); 			 /* Donne la position de la variable de fin */
-            $leLien = substr( $page, $debutLien, $finLien - $debutLien); /* Fonction filtrante */
-            echo $leLien;
-            echo "</div>";
+            echo $content;
+        echo "</div>";
         include("footer.php");
     echo "</body>";
     echo "</html>";
@@ -82,17 +85,17 @@ if (isset($url) && isset($choix))
                 echo "<div class=\"form-group\">"; 
                 echo "<input class=\"form-control\" type=\"text\" name=\"url\" placeholder=\"Entrez l'url Github\">";
                 echo "<select name=\"choix\">";
-                    echo "<option value=\"0\">Par défaut</option>"; /* Thème par défaut */
-                    echo "<option value=\"1\">Mangas</option>"; /* Thèmes d'Elisabeth */
+                    echo "<option value=\"0\">Par défaut</option>";
+                    echo "<option value=\"1\">Mangas</option>";
                     echo "<option value=\"2\">Animaux</option>";
-                    echo "<option value=\"3\">Science-Fiction</option>";/* Thèmes de Sarah */
+                    echo "<option value=\"3\">Science-Fiction</option>";
                     echo "<option value=\"4\">3D</option>";
-                    echo "<option value=\"5\">Sécurité informatique</option>";/* Thèmes de Thibaut */
+                    echo "<option value=\"5\">Sécurité informatique</option>";
                     echo "<option value=\"6\">Sciences</option>";
-                    echo "<option value=\"7\">Jeux vidéo</option>";/* Thèmes de Jean-Gabriel */
+                    echo "<option value=\"7\">Jeux vidéo</option>";
                     echo "<option value=\"8\">Geek</option>";
-                    echo "<option value=\"9\">musique</option>";/* Thèmes d'Axel */
-                    echo "<option value=\"10\">fruits</option>";
+                    echo "<option value=\"9\">Musique</option>";
+                    echo "<option value=\"10\">Fruits</option>";
                 echo "</select>";
                 echo "</div>";
                 echo "<button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\">Valider</button>";
