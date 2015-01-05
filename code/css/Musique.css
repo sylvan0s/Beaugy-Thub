@@ -1,0 +1,151 @@
+body{
+	margin: 10px 0 ;
+	padding: 0 ;
+	text-align: center ;
+	font: 0.8em "Trebuchet MS", helvetica, sans-serif ;
+    background: url(../images/backgroudmusic.jpg);
+}
+div#conteneur{
+  width: 900px ;
+  margin: 0 auto ;
+  text-align: left ;
+  border: 2px solid ;
+  background: white;
+}
+h1#header{
+  height: 300px ;
+  background: url(../images/backgroudmusique.jpg) no-repeat center;
+  margin: 0;
+}
+h1#header a
+{
+    width: 400px ;
+    height: 70px ;
+    display: block ;
+    background: url(../images/jpg) no-repeat ;
+    position: relative ;
+    left: 350px ;
+    top: 15px ;
+    text-indent: -5000px ;
+}
+ul#menu
+{
+    height: 35px ;
+    margin: 0 ;
+    padding: 0 ;
+    background: url(../images/gif) repeat-x 0 -25px ;
+    list-style-type: none ;
+}
+ul#menu li
+{
+    float: left ;
+    text-align: center ;
+}
+ul#menu li a
+{
+    width: 145px ;
+    line-height: 25px ;
+    font-size: 1.2em ;
+    font-weight: bold ;
+    letter-spacing: 2px ;
+    color: orange;
+    display: block ;
+    text-decoration: none ;
+    
+}
+pre{
+  overflow: auto ;
+}
+<!--[if IE]>
+<style type="text/css">
+html pre
+{
+  width: 636px ;
+}
+</style>
+<![endif]-->
+div#contenu
+{
+    padding: 0 25px 0 100px ;
+    background: url(gif) no-repeat 15px 15px ;
+}
+div#contenu h2{
+    padding-left: 25px ;
+    line-height: 25px ;
+    font-size: 1.4em ;
+    background: url(../images/iconepiano.jpg) no-repeat left bottom ;
+    color: orange;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+}
+div#contenu h3{
+    margin-left: 15px ;
+    padding-left: 5px ;
+    border-bottom: 1px solid white ;
+    border-left: 3px solid white ;
+    color: #9b2 ;
+}
+div#contenu p{
+    text-align: justify ;
+    text-indent: 2em ;
+    line-height: 1.7em ;
+}
+div#contenu a{
+    color: #8a0 ;
+}
+
+div#contenu a:hover{
+    color: #9b2;
+}
+p#footer{
+    margin: 0 ;
+    padding-right: 10px ;
+    line-height: 30px ;
+    text-align: right ;
+    color: orange ;
+}
+pre{
+    overflow: auto ;
+    background: #dea ;
+    border: 2px solid #9b2 ;
+    padding: 5px 0 0 5px ;
+    font-size: 1.2em ;
+}
+pre span{
+    color: #560 ;
+}
+pre span.comment{
+    color: #b30000 ;
+}
+
+élément {
+}
+a {
+    color: #036564;
+    text-decoration: none;
+}
+body {
+    text-align: left;
+    font-family: arial;
+    font-size: 100%;
+    color: #41210B;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
