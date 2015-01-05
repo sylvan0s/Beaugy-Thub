@@ -1,22 +1,6 @@
 <?php
-/* FONCTIONS */
-function after ($this, $inthat)
-{
-    if (!is_bool(strpos($inthat, $this)))
-    return substr($inthat, strpos($inthat, $this) + strlen($this));
-};
-
-function before ($this, $inthat)
-{
-    return substr($inthat, 0, strpos($inthat, $this));
-};
-
-function between ($this, $that, $inthat)
-{
-    return before ($that, after($this, $inthat));
-};
-
 /* VARIABLES */
+$titre = htmlspecialchars($_POST['titre']);
 $url = htmlspecialchars($_POST['url']);
 $choix = $_POST['choix'];
 
@@ -27,14 +11,6 @@ $debutLien = strpos($page, $premier);                           // Donne la posi
 $finLien = strpos($page, $dernier);                             // Donne la position de la variable de fin
 $content = substr($page, $debutLien, $finLien - $debutLien);    // Fonction filtrante
 
-$titre = file_get_contents($url);
-$first = "<h1>";
-$last = "<h4>";
-$debutTitre = strpos($titre, $first);
-$finTitre = strpos($titre, $last);
-$getTitre = substr($titre, $debutTitre, $finTitre - $debutTitre);
-$contentTitre = between("</a>", "</h1>", $getTitre);
-
 /* CODE */
 if (isset($url) && isset($choix))
 {
@@ -42,7 +18,7 @@ if (isset($url) && isset($choix))
     echo "<html lang=\"fr\">";
     echo "<head>";
         echo "<meta charset=\"utf-8\" />";
-        echo "<title>" . $contentTitre . " - Beaugy'Thub</title>";
+        echo "<title>" . $titre . " - Beaugy'Thub</title>";
         echo "<link href=\"css/bootstrap-theme.min.css\" rel=\"stylesheet\">";
         echo "<link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">";
         switch ($choix) {
@@ -59,21 +35,15 @@ if (isset($url) && isset($choix))
                 echo "<link href=\"css/3D.css\" rel=\"stylesheet\">";
                 break;
             case 5:
-                echo "<link href=\"css/securite.css\" rel=\"stylesheet\">";
-                break;
-            case 6:
-                echo "<link href=\"css/sciences.css\" rel=\"stylesheet\">";
-                break;
-            case 7:
                 echo "<link href=\"css/jeux.css\" rel=\"stylesheet\">";
                 break;
-            case 8:
+            case 6:
                 echo "<link href=\"css/geek.css\" rel=\"stylesheet\">";
                 break;
-            case 9:
+            case 7:
                 echo "<link href=\"css/musique.css\" rel=\"stylesheet\">";
                 break;
-            case 10:
+            case 8:
                 echo "<link href=\"css/Fruits.css\" rel=\"stylesheet\">";
                 break;
             default:
@@ -106,21 +76,20 @@ if (isset($url) && isset($choix))
             echo "<article>";
                 //  Formulaire qui disparait quand on entre une url
                 echo "<form class=\"form-signin\" role=\"form\" action=\"index.php\" method=\"POST\">";
-                echo "<h2 class=\"form-signin-heading\">Beaugy'Thub</h2>";
-                echo "<div class=\"form-group\">"; 
-                echo "<input class=\"form-control\" type=\"text\" name=\"url\" placeholder=\"Entrez l'url Github\">";
+                echo "<h2 class=\"form-signin-heading\">Beaugy'Thub</h2><br>";
+                echo "<div class=\"form-group\">";
+                echo "<p><input class=\"form-control\" type=\"text\" name=\"titre\" placeholder=\"Entrez le titre du projet\"></p>";
+                echo "<p><input class=\"form-control\" type=\"text\" name=\"url\" placeholder=\"Entrez l'url Github\"></p>";
                 echo "<select name=\"choix\">";
                     echo "<option value=\"0\">Par défaut</option>";
                     echo "<option value=\"1\">Mangas</option>";
                     echo "<option value=\"2\">Animaux</option>";
                     echo "<option value=\"3\">Science-Fiction</option>";
                     echo "<option value=\"4\">3D</option>";
-                    echo "<option value=\"5\">Sécurité informatique</option>";
-                    echo "<option value=\"6\">Sciences</option>";
-                    echo "<option value=\"7\">Jeux vidéo</option>";
-                    echo "<option value=\"8\">Geek</option>";
-                    echo "<option value=\"9\">Musique</option>";
-                    echo "<option value=\"10\">Fruits</option>";
+                    echo "<option value=\"5\">Jeux vidéo</option>";
+                    echo "<option value=\"6\">Geek</option>";
+                    echo "<option value=\"7\">Musique</option>";
+                    echo "<option value=\"8\">Fruits</option>";
                 echo "</select>";
                 echo "</div>";
                 echo "<button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\">Valider</button>";
