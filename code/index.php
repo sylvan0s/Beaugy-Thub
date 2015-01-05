@@ -33,11 +33,11 @@ if (isset(htmlspecialchars($_POST['url'])) && isset($_POST['choix']))
             case 8:
                 echo "<link href=\"css/geek.css\" rel=\"stylesheet\">";
                 break;
-            /*case 9: EN ATTENTE DES THEMES D'AXEL
+            case 9:
                 echo "<link href=\"css/musique.css\" rel=\"stylesheet\">";
                 break;
             case 10:
-                echo "<link href=\"css/#.css\" rel=\"stylesheet\">";
+                echo "<link href=\"css/Fruits.css\" rel=\"stylesheet\">";
                 break;*/
             default:
                 echo "<link href=\"css/style.css\" rel=\"stylesheet\">";
@@ -88,8 +88,8 @@ if (isset(htmlspecialchars($_POST['url'])) && isset($_POST['choix']))
                     echo "<option value=\"6\">Sciences</option>";
                     echo "<option value=\"7\">Jeux vidéo</option>";/* Thèmes de Jean-Gabriel */
                     echo "<option value=\"8\">Geek</option>";
-                    echo "<option value=\"9\">theme.Axel1</option>";/* Thèmes d'Axel */
-                    echo "<option value=\"10\">theme.Axel2</option>";
+                    echo "<option value=\"9\">musique</option>";/* Thèmes d'Axel */
+                    echo "<option value=\"10\">fruits</option>";
                 echo "</select>";
                 echo "</div>";
                 echo "<button type=\"submit\" class=\"btn btn-lg btn-primary btn-block\">Valider</button>";
