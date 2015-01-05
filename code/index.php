@@ -1,4 +1,21 @@
 <?php
+/* FONCTIONS */
+function after ($this, $inthat)
+{
+    if (!is_bool(strpos($inthat, $this)))
+    return substr($inthat, strpos($inthat, $this) + strlen($this));
+};
+
+function before ($this, $inthat)
+{
+    return substr($inthat, 0, strpos($inthat, $this));
+};
+
+function between ($this, $that, $inthat)
+{
+    return before ($that, after($this, $inthat));
+};
+
 /* VARIABLES */
 $url = htmlspecialchars($_POST['url']);
 $choix = $_POST['choix'];
@@ -10,6 +27,14 @@ $debutLien = strpos($page, $premier);                           // Donne la posi
 $finLien = strpos($page, $dernier);                             // Donne la position de la variable de fin
 $content = substr($page, $debutLien, $finLien - $debutLien);    // Fonction filtrante
 
+$titre = file_get_contents($url);
+$first = "<h1>";
+$last = "<h4>";
+$debutTitre = strpos($titre, $first);
+$finTitre = strpos($titre, $last);
+$getTitre = substr($titre, $debutTitre, $finTitre - $debutTitre);
+$contentTitre = between("</a>", "</h1>", $getTitre);
+
 /* CODE */
 if (isset($url) && isset($choix))
 {
@@ -17,7 +42,7 @@ if (isset($url) && isset($choix))
     echo "<html lang=\"fr\">";
     echo "<head>";
         echo "<meta charset=\"utf-8\" />";
-        echo "<title>Beaugy'Thub</title>";
+        echo "<title>" . $contentTitre . " - Beaugy'Thub</title>";
         echo "<link href=\"css/bootstrap-theme.min.css\" rel=\"stylesheet\">";
         echo "<link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">";
         switch ($choix) {
