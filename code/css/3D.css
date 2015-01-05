@@ -1,0 +1,54 @@
+nav {
+	position: relative;
+	min-height: 30px;
+	margin-bottom: 20px;
+	border: 1px solid transparent;
+	padding-top: 1%;
+	background-color: black;
+}
+
+nav ul {
+	list-style: none;
+	display: block;
+	border-width: 0 0 1px;
+	border-radius: 0;
+
+}
+
+li {
+	display: inline;
+}
+
+li a {
+	color : white;
+	text-decoration: none;
+
+	margin-left: 26%;
+}
+
+.container {
+	background-image: url("../images/cubes.jpg");
+}
+
+body {
+	background-color: white;
+}
+
+h1 {
+	color: black;
+}
+
+h2 {
+	color: #D7DADB;
+}
+
+p {
+	color: #663F0F;
+}
+
+footer p {
+	display: block;
+	float: left;
+	margin-left: 45%;
+	color: black;
+}
